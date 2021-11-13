@@ -28,7 +28,7 @@ let comboBurguer =
            //que el resultado de comboBurguer recorra el array Burguer y busque si hay un id igual, si es asi, será igual al ítem del ID.
          for (let comboBurguer of burguer) {
              if (comboBurguer === burguer.id) {
-                 costoFinal.push(comboBurguer);
+                 costoFinal.push(new comboBurguer);
              }
            
           console.log(comboBurguer);
@@ -45,7 +45,7 @@ let comboDrink =
 
             for (let comboDrink of drink) {
                 if (comboDrink === drink.id) {
-                    costoFinal.push(comboDrink);
+                    costoFinal.push(new comboDrink);
                 }
               
              console.log(comboDrink);
@@ -58,7 +58,7 @@ let comboAccompaniment =
 
             for (let comboAccompaniment of accompaniment) {
                 if (comboAccompaniment === accompaniment.id) {
-                    costoFinal.push(comboAccompaniment);
+                    costoFinal.push(new comboAccompaniment);
                 }
               
              console.log(comboAccompaniment);
@@ -66,3 +66,25 @@ let comboAccompaniment =
    
 
 console.log(costoFinal.costoFinal);
+
+for (const producto of burguer) {
+    let contenedor = document.createElement("div");
+    contenedor.innerHTML = `<h3> ID: ${producto.id}</h3>
+                            <p>  Producto: ${producto.burguer}</p>
+                            <b> $ ${producto.precio}</b>`;
+    document.body.appendChild(contenedor);
+}
+for (const producto of drink) {
+    let contenedor = document.createElement("div");
+    contenedor.innerHTML = `<h3> ID: ${producto.id}</h3>
+                            <p>  Producto: ${producto.drink}</p>
+                            <b> $ ${producto.precio}</b>`;
+    document.body.appendChild(contenedor);
+}
+for (const producto of accompaniment) {
+    let contenedor = document.createElement("div");
+    contenedor.innerHTML = `<h3> ID: ${producto.id}</h3>
+                            <p>  Producto: ${producto.accompaniment}</p>
+                            <b> $ ${producto.precio}</b>`;
+    document.body.appendChild(contenedor);
+}
